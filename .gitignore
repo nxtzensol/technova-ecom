@@ -1,4 +1,4 @@
-```
+```gitignore
 # Compiled and build artifacts
 *.pyc
 __pycache__/
@@ -22,7 +22,6 @@ venv/
 dist/
 build/
 target/
-.gradle/
 
 # Logs and temp files
 *.log
