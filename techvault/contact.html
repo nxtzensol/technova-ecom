@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechVault</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>TechVault</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." id="searchInput">
+                        <button type="button" id="searchBtn">🔍</button>
+                    </div>
+                    <a href="cart.html" class="cart-icon">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="content-card">
+                <h2>Get in Touch</h2>
+                <p>Have questions or need assistance? We're here to help! Reach out to us through any of the following channels, and our friendly support team will get back to you as soon as possible.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
+                        <h4 style="margin-bottom: 0.5rem;">Email Us</h4>
+                        <p style="color: #7f8c8d;">support@techvault.com</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📞</div>
+                        <h4 style="margin-bottom: 0.5rem;">Call Us</h4>
+                        <p style="color: #7f8c8d;">+1 (555) 123-4567</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📍</div>
+                        <h4 style="margin-bottom: 0.5rem;">Visit Us</h4>
+                        <p style="color: #7f8c8d;">123 Tech Street<br>Silicon Valley, CA</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🕐</div>
+                        <h4 style="margin-bottom: 0.5rem;">Business Hours</h4>
+                        <p style="color: #7f8c8d;">Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name</label>
+                                <input type="text" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input type="email" id="contactEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" required style="width: 100%; padding: 0.8rem; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TechVault</h4>
+                    <p>Your trusted destination for premium electronics and gadgets.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: support@techvault.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Address: 123 Tech Street, Silicon Valley, CA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechVault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const name = $('#contactName').val();
+            const email = $('#contactEmail').val();
+            const subject = $('#contactSubject').val();
+            const message = $('#contactMessage').val();
+            
+            // Store contact message (in real app, this would be sent to server)
+            const contactMessages = JSON.parse(localStorage.getItem('techvault_contact_messages')) || [];
+            contactMessages.push({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+                date: new Date().toISOString()
+            });
+            localStorage.setItem('techvault_contact_messages', JSON.stringify(contactMessages));
+            
+            // Show success notification
+            showNotification('Thank you! Your message has been sent successfully.');
+            
+            // Clear form
+            $('#contactForm')[0].reset();
+        }
+    </script>
+</body>
+</html>
